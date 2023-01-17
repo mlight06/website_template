@@ -2,7 +2,7 @@
   "name": "website_template",
   "version": "1.0.0",
   "description": "template for making websites",
-  "main": "./frontend/src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "npm test",
     "dev": "webpack --mode development",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/mlight06/website_template#readme",
   "dependencies": {
     "@babel/core": "^7.20.12",
+    "babel-loader": "^9.1.2",
     "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
