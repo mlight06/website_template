@@ -5,10 +5,17 @@ import HomePage from '../../src/HomePage';
 // const element = {
 //   <BrowserRouter>
 // }
-
+function App () {
+  return (
+    <div>
+      Hello World
+    </div>
+  )
+}
 const root = createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-    <HomePage/>
-  {/* </React.StrictMode> */}
+
+  <App />
+    // <HomePage />
+
 );

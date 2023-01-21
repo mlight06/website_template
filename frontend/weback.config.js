@@ -9,19 +9,47 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'deploy'),
   },
-  rules: [
-    {
-      test: /\.jsx$|\.js$/,
-      exclude: /node_modules/,
-      loader: "babel-loader",
-      options: {
-        presets: ["@babel/preset-env", "@babel/preset-react"]
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
+  // module:{
+  //   rules: [
+  //     {
+  //       test: /\.jsx$|\.js$/,
+  //       exclude: /node_modules/,
+  //       loader: "babel-loader",
+  //       options: {
+  //         presets: ["@babel/preset-env", "@babel/preset-react"]
+  //       }
+  //     }
+  //   ],
+  //   plugins: [
+  //     // new HtmlWebpackPlugin({
+  //     //   title: 'Webpack Output',
+  //     // }),
+  //     "@babel/plugin-transform-runtime"
+  //   ],
+  // }
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', { targets: "defaults" }, '@babel/preset-react']
+            ],
+            plugins: [
+              //     // new HtmlWebpackPlugin({
+              //     //   title: 'Webpack Output',
+              //     // }),
+                  "@babel/plugin-transform-runtime"
+                ],
+          }
+        }
       }
-    }
-  ],
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Webpack Output',
-    }),
-  ],
+    ]
+  }
 };
